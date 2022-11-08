@@ -4,7 +4,9 @@
 
 int main() {
 	int a = 3;
-	int& another_a = a; //'another_a는 a의 참조자다!' 정의, 가리키고자 하는 타입 뒤에 &를 붙이면 참조자를 정한다
+	int& another_a = a;
+	//'another_a는 a의 참조자다!' 정의
+	//가리키고자 하는 타입(int) 뒤에 &를 붙이면 참조자를 정한다
 	
 	/*
 	another_a는 a의 또다른 이름,
