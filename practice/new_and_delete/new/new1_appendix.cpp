@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 /* 변수의 선언 위치에 따른 결과
