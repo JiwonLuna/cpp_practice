@@ -19,21 +19,22 @@ int main(){
 	int (&ref)[5]라면 크기가 5인 int 배열의 별명이 되어야 함.
 	*/
 		
-	// std::cout << arr[0] << arr[1] << arr[2] << std::endl;
-	// std::cout << ref[0] << ref[1] << ref[2] << std::endl;
-	// std::cout << arr << std::endl;
-	
-	// ref[0] = 2;
-	// ref[1] = 3;
-	// ref[2] = 1;
-	
-	// std::cout << arr[0] << arr[1] << arr[2] << std::endl;
-	// std::cout << ref[0] << ref[1] << ref[2] << std::endl;
-	
-	int arr[3][2] = {1, 2, 3, 4, 5, 6};
-	int (&ref)[3][2] = arr;
-	
+	std::cout << arr[0] << arr[1] << arr[2] << std::endl;
+	std::cout << ref[0] << ref[1] << ref[2] << std::endl;
 	std::cout << arr << std::endl;
+	
+	ref[0] = 2;
+	ref[1] = 3;
+	ref[2] = 1;
+	
+	std::cout << arr[0] << arr[1] << arr[2] << std::endl;
+	std::cout << ref[0] << ref[1] << ref[2] << std::endl;
+	
+	// int arr[3][2] = {1, 2, 3, 4, 5, 6};
+	// int (&ref)[3][2] = arr;
+	
+	// std::cout << arr[0][0] << arr[1][0] << arr[2][0] << std::endl
+	// 	<< arr[0][1] << arr[1][1] << arr[2][1] << std::endl;
 	
 	
 	return 0;
