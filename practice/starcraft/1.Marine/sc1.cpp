@@ -27,6 +27,10 @@ class Marine {
 	
 	void show_status();
 };
+/* 위 클래스의 객체들이 바로 개개의 마린들이 됨. 어떠한 객체의 내부적 성질, 상태 등에
+관련된 변수들은 모두 private 범주에 두고, 그 객체가 외부헤 하는 행동들은 함수로써
+구현하여 public 에 둠.
+*/
 
 Marine::Marine() {
 	hp = 50;
@@ -34,6 +38,7 @@ Marine::Marine() {
 	damage = 5;
 	is_dead = false;
 }
+
 Marine::Marine(int x, int y) {
 	coord_x = x;
 	coord_y = y;
@@ -41,15 +46,19 @@ Marine::Marine(int x, int y) {
 	damage = 5;
 	is_dead = false;
 }
+
 void Marine::move(int x, int y) {
 	coord_x = x;
 	coord_y = y;
 }
+
 int Marine::attack() { return damage; }
+
 void Marine::be_attacked(int damage_earn) {
 	hp -= damage_earn;
 	if (hp <= 0) is_dead = true;
 }
+
 void Marine::show_status() {
 	std::cout << " *** Marine *** " << std::endl;
 	std::cout << " Location : ( " << coord_x << " , " << coord_y << " ) "
@@ -66,12 +75,11 @@ int main() {
 	
 	std::cout << std::endl << "마린 1 이 마린 2 를 공격!" << std::endl;
 	marine2.be_attacked(marine1.attack());
-	
+	/* 위 코드는 단순한 상황이지만 약간의 문제가 있음. 수십 명의 마린들이 서로
+	뒤엉켜 싸운다면? 그럴 때는 수십 개의 marine1, marine2, marine3,... 이렇게
+	미리 만들 수도 없다. -> 해답 : marine 들을 배열로 정해 버리면 됨.
+	클래스는 위와 동일한 다음 파일을 열어보라.
+	*/
 	marine1.show_status();
 	marine2.show_status();
 }
-
-
-
-
-
