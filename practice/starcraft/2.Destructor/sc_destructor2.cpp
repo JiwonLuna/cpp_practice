@@ -14,6 +14,7 @@ class Marine {
 	Marine();								// 기본 생성자
 	Marine(int x, int y, const char* marine_name);	// 이름까지 지정
 	Marine(int x, int y);		// x, y 좌표에 마린 생성
+	~Marine();
 	
 	int attack();
 	void be_attacked(int damage_earn);
@@ -69,6 +70,16 @@ void Marine::show_status() {
 	std::cout << "HP : " << hp << std::endl;
 }
 
+Marine::~Marine(){
+	std::cout << name << " 의 소멸자 호출 ! " << std::endl;
+	if (name != NULL) {
+		delete[] name;
+	}
+}
+/* name 이 NULL이 아닐 경우에(동적으로 할당이 되었을 경우에)만 delete로
+name을 삭제. name 자체가 char의 배열로 동적할당 하였기 때문에 delete 역시
+delete[] name, []를 꼭 써줘야 한다.*/
+
 int main() {
 	Marine* marines[100];
 	
@@ -89,3 +100,9 @@ int main() {
 	delete marines[1];
 }
 
+/* 생상자가 클래스 이름과 똑같이 생겼다면 소멸자는 그 앞에 ~ 만 붙이면 됨.
+생성자와 다른 점은, 소멸자는 인자를 아무 것도 가지지 않는다는 것.
+소멸하는 객체에 인자를 넘겨서 할 것도 없음. 따라서 소멸자는 오버로딩도 되지 않음.
+
+
+*/
