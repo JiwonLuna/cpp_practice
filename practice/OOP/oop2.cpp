@@ -50,7 +50,7 @@ class Animal {
 
 int main() {
 	Animal animal;
-	/* 기존의 구조체에서 고조체 변수를 생성할 때와 동일한데, 구조체의 경우 앞에 struct를
+	/* 기존의 구조체에서 구조체 변수를 생성할 때와 동일한데, 구조체의 경우 앞에 struct를
 	명시했어야 했지만 여기서는 그러지 않아도 됨. 그냥 int 나 char 처럼 Animal 이라고
 	써주면 됨. 이와 같이 Animal animal;을 하면 Animal 클래스의 인스턴스 animal을 
 	만들게 된 것.
