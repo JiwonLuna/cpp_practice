@@ -53,7 +53,7 @@ void Marine::show_status() {
 	std::cout << "HP : " << hp << std::endl;
 }
 
-int main() {
+int main() {	
 	Marine* marines[100];
 	marines[0] = new Marine(2, 3);
 	marines[1] = new Marine(3, 5);
